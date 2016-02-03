@@ -11,6 +11,18 @@ RUN groupadd --gid 1001 app && \
 
 WORKDIR /app
 
+ENV IP_ADDRESS=127.0.0.1"
+ENV PORT=3000
+ENV FALLBACK_DOMAIN=
+ENV HTTP_TIMEOUT=8.0
+ENV INSECURE_SSL=false
+ENV TOOBUSY_MAX_LAG=70
+# ENV COMPUTECLUSTER_MAX_PROCESSES=
+# ENV COMPUTECLUSTER_MAX_BACKLOG=
+# ENV LOG_FORMATTERS=
+# ENV TEST_SERVICE_FAILURE=
+
+expose 3000
 
 # Install node requirements and clean up unneeded cache data
 COPY package.json package.json
